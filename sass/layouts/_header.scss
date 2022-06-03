@@ -17,7 +17,9 @@
     }
 
     .navbar-collapse {
-      padding: 4rem 0 8rem 0;
+      @include tablet-md {
+        padding: 4rem 0 8rem 0;
+      }
 
       .navbar-nav {
         .nav-link {
@@ -32,7 +34,7 @@
 
           &::after {
             position: absolute;
-            content: '';
+            content: "";
             display: block;
             left: 40%;
             bottom: -2rem;
@@ -185,5 +187,23 @@
       width: 100%;
       z-index: -1;
     }
+  }
+
+  &-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    overflow: hidden;
+    height: 5.5rem;
+    width: 100%;
+    transition: all 0.5s;
+    z-index: 4;
+  }
+
+  &-nav-fixed {
+    position: absolute;
+    right: 14.85rem;
+    transition: all 0.3s;
   }
 }
