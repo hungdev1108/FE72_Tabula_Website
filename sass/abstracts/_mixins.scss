@@ -1,0 +1,29 @@
+@mixin Text($fs, $fw, $color) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $color;
+}
+
+@mixin desktop-lg {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet-md {
+  @media screen and (max-width: 922px) {
+    @content;
+  }
+}
+
+@mixin mobile-sm {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile-xs {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}

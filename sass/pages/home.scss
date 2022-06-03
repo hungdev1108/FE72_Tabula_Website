@@ -1,0 +1,244 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../abstracts/function';
+
+@import '../base/base';
+@import '../base/typography';
+
+@import '../components/button';
+
+@import '../layouts/header';
+@import '../layouts/footer';
+
+// About Us
+.aboutUs {
+  position: relative;
+  margin: 0 auto;
+  z-index: 3;
+  .row {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    .col {
+      .item {
+        span {
+          display: block;
+          font-family: $font-montserrat;
+          @include Text(1.6rem, $text-semiBold, $c-primary);
+          text-transform: uppercase;
+          margin-bottom: 0.5rem;
+          // Responsive
+          @include tablet-md {
+            margin-top: 3rem;
+          }
+          @include mobile-sm {
+            margin-top: 3rem;
+          }
+          @include mobile-xs {
+            margin-top: 3rem;
+          }
+        }
+
+        h1 {
+          @include Text(5rem, 700, $c1-400);
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .bg-aboutUs {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}
+
+// Teachers
+.teachers {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  position: relative;
+  background-color: $c2-200;
+  z-index: 1;
+  .container {
+    .row {
+      .col {
+        padding: 1.6rem;
+        .item {
+          height: 100%;
+          background-color: $c-white;
+          border-radius: 1rem;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          .item__pic {
+            overflow: hidden;
+            img {
+              display: block;
+              width: 100%;
+              border-top-left-radius: 1rem;
+              border-top-right-radius: 1rem;
+              transition: all 1s ease;
+              overflow: hidden;
+              &:hover {
+                transform: scale(1.05);
+                overflow: hidden;
+              }
+            }
+          }
+          .item__content {
+            text-align: center;
+            padding: 1.8rem 4rem;
+            span {
+              @include Text(1.2rem, $text-semiBold, $c-primary);
+              margin-bottom: 0.5rem;
+              display: block;
+            }
+            h4 {
+              @include Text(2.3rem, $text-bold, $c1-400);
+              margin-bottom: 0.5rem;
+            }
+            p {
+              @include Text(1.5rem, $text-regular, $c1-300);
+            }
+          }
+          &:hover {
+            box-shadow: 0 1rem 2.2rem -1rem rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+  .bg-teachers {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -2;
+
+    img {
+      width: 100%;
+      z-index: -2;
+    }
+  }
+}
+
+// FindCourse
+.findCourse {
+  position: relative;
+  padding-top: 6rem;
+  overflow: hidden;
+  z-index: 1;
+  .row {
+    // padding: 0 5rem;
+    .col {
+      .item__left {
+        padding: 0 3rem;
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+
+      .item__right {
+        padding: 0 3rem;
+        .form__contact {
+          background-color: $c-white;
+          padding: 2rem 3rem;
+          border-radius: 1rem;
+          box-shadow: 0 1rem 2.2rem -1rem rgba(0, 0, 0, 0.3);
+          .caption {
+            h3 {
+              margin-top: 2rem;
+              @include Text(3.75rem, $text-bold, $c1-400);
+            }
+          }
+          .form {
+            background-color: $c-white;
+            margin-top: 2rem;
+            span {
+              position: relative;
+              i {
+                position: absolute;
+                left: 1.2rem;
+                top: 50%;
+                transform: translateY(-50%);
+                color: $c-primary;
+              }
+              i.fa-message {
+                top: 1.5rem;
+                transform: translateY(0);
+              }
+              .form-control,
+              .form-select,
+              .textarea {
+                border-radius: 2rem;
+                padding: 1rem 3.5rem;
+                font-size: 1.4rem;
+                transition: all 0.3s ease;
+                &:focus {
+                  -webkit-box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.1);
+                  box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.1);
+                  border: 0.1rem solid rgba(0, 0, 0, 0.3);
+                }
+              }
+            }
+            .btn-form-find {
+              display: block;
+              margin-top: 2rem;
+              font-family: $font-montserrat;
+              text-decoration: none;
+              text-transform: uppercase;
+              -webkit-box-shadow: 0 0 0 3rem $c-primary inset;
+              box-shadow: 0 0 0 3rem $c-primary inset;
+              padding: 1.4rem 5.5rem;
+              border-radius: 5rem;
+              background: transparent;
+              @include Text(1.4rem, $text-semiBold, $c-white);
+              transition: all 0.3s ease;
+              letter-spacing: 0.1rem;
+              border: none;
+
+              &:hover {
+                color: $c-primary;
+                -webkit-box-shadow: 0 0 0 0.1rem $c-primary inset;
+                box-shadow: 0 0 0 0.1rem $c-primary inset;
+              }
+            }
+          }
+          @include mobile-xs {
+            padding: 2rem;
+          }
+        }
+        //Responsive
+        @include mobile-xs {
+          padding: 0;
+        }
+      }
+    }
+    @include mobile-xs {
+      padding: 1.5rem !important;
+    }
+  }
+  .bg-findCourses {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -2;
+
+    img {
+      width: 100%;
+      z-index: -2;
+    }
+  }
+}

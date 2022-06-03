@@ -1,0 +1,189 @@
+.header {
+  position: relative;
+  font-family: $font-montserrat;
+  margin: 0 auto;
+  z-index: 3;
+  .navbar {
+    .navbar-brand {
+      img {
+        width: 8rem;
+      }
+    }
+    .navbar-toggler {
+      .navbar-toggler-icon {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    .navbar-collapse {
+      padding: 4rem 0 8rem 0;
+
+      .navbar-nav {
+        .nav-link {
+          position: relative;
+          display: block;
+          margin: 0 4rem 0 0 !important;
+          @include Text(1.3rem, 600, $c1-300 !important);
+          transition: all 0.2s ease;
+          &:hover {
+            color: $c-primary !important;
+          }
+
+          &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            left: 40%;
+            bottom: -2rem;
+            height: 0.8rem;
+            width: 0.8rem;
+            border-radius: 50%;
+            background: $c-primary;
+            transition: all 0.3s ease;
+            transform: translate(0);
+            opacity: 0;
+          }
+
+          &:hover::after {
+            opacity: 1;
+            transform: scale(1.5);
+
+            @include tablet-md {
+              display: none;
+            }
+
+            @include mobile-sm {
+              display: none;
+            }
+          }
+
+          @include tablet-md {
+            margin: 0 !important;
+            font-size: 2.2rem;
+          }
+
+          @include mobile-sm {
+            margin: 0 !important;
+            font-size: 2.2rem;
+            padding: 1.6rem 0;
+          }
+
+          @include mobile-xs {
+            margin: 0 !important;
+            font-size: 2rem;
+            padding: 1.2rem 0;
+          }
+        }
+
+        .navbar__contact {
+          .navbar__contact-button {
+            .btn-contact-header {
+              -webkit-box-shadow: 0 0 0 3rem $c-primary inset;
+              box-shadow: 0 0 0 3rem $c-primary inset;
+              margin-left: 5rem;
+              display: block;
+              text-decoration: none;
+              padding: 1rem 1.5rem;
+              border-radius: 5rem;
+              background: transparent;
+              @include Text(1.35rem, $text-medium, $c-white);
+              transition: all 0.3s ease;
+
+              &:hover {
+                color: $c-primary;
+                -webkit-box-shadow: 0 0 0 0.1rem $c-primary inset;
+                box-shadow: 0 0 0 0.1rem $c-primary inset;
+              }
+
+              i {
+                padding-right: 0.5rem;
+              }
+
+              @include tablet-md {
+                font-size: 2.2rem;
+                letter-spacing: 1.5;
+              }
+
+              @include mobile-sm {
+                font-size: 2.2rem;
+                letter-spacing: 1.5;
+              }
+            }
+          }
+
+          .navbar__contact-icon {
+            margin-left: 2rem;
+
+            a {
+              display: inline-block;
+              margin-right: 1rem;
+              color: $c-black;
+              transition: all 0.2s ease;
+              &:hover {
+                color: $c-primary;
+              }
+            }
+          }
+          @include tablet-md {
+            flex-direction: column;
+          }
+
+          @include mobile-sm {
+            flex-direction: column;
+          }
+
+          .navbar__contact-button {
+            @include tablet-md {
+              margin-bottom: 1.6rem;
+              .btn-contact-header {
+                margin: 0;
+              }
+            }
+            @include mobile-sm {
+              margin-bottom: 1.6rem;
+              .btn-contact-header {
+                margin: 0;
+              }
+            }
+          }
+
+          .navbar__contact-icon {
+            a:not(:last-child) {
+              @include tablet-md {
+                margin-right: 2.5rem;
+              }
+
+              @include mobile-sm {
+                margin-right: 2.5rem;
+              }
+            }
+
+            @include tablet-md {
+              margin: 0;
+              font-size: 2rem;
+            }
+
+            @include mobile-sm {
+              margin: 0;
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bg-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}
